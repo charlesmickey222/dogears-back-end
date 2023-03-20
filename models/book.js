@@ -9,10 +9,10 @@ const bookCommentSchema = new Schema({
 })
 
 const bookSchema = new Schema({
-  bookIdList:[String],
+  olID:String,
   title:String,
-  coverKeys:[String],
-  authors:[{type:Schema.Types.ObjectId, ref:'Author'}],
+  coverURL:String,
+  authors: [String],//[{type:Schema.Types.ObjectId, ref:'Author'}],
   contributions:[String],
   publishDate:String,
   publishers:[String],
@@ -22,7 +22,7 @@ const bookSchema = new Schema({
   subjectPlaces:[String],
   subjectPeople:[String],
   subjectTimes:[String],
-  readers:[{type:Schema.Types.ObjectId, ref:'Reader'}],
+  readers:[{type:Schema.Types.ObjectId, ref:'Profile'}],
   comments:[bookCommentSchema],
   ratings:[{type:Schema.Types.ObjectId, ref:'Rating'}],
   addedBy:{type:Schema.Types.ObjectId, ref:'Profile'},
@@ -30,6 +30,6 @@ const bookSchema = new Schema({
   timestamps:true
 })
 
-const Book = mongoose.Model('Book', bookSchema)
+const Book = mongoose.model('Book', bookSchema)
 
-export {Book}
+export { Book }

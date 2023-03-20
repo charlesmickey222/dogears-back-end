@@ -6,6 +6,6 @@ const discussionSchema = new Schema({
   
 })
 
-const Discussion = mongoose.Model('Discussion', discussionSchema)
+const Discussion = mongoose.model('Discussion', discussionSchema)
 
 export {Discussion}

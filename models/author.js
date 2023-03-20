@@ -13,6 +13,6 @@ const authorSchema = new Schema({
   readers:[{type:Schema.Types.ObjectId, ref:'Reader'}],
 })
 
-const Author = mongoose.Model('Author', authorSchema)
+const Author = mongoose.model('Author', authorSchema)
 
 export {Author}
